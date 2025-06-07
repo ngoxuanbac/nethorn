@@ -23,6 +23,7 @@
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
+    "@botpress/client": "^1.15.0",
     "@eslint/eslintrc": "^3",
     "@gltf-transform/core": "^4.1.4",
     "@google/genai": "^1.0.1",

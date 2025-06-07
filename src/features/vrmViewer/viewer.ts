@@ -162,4 +162,17 @@ export class Viewer {
       this._renderer.render(this._scene, this._camera);
     }
   };
+
+  public dispose() {
+    this.unloadVRM();
+    if (this._renderer) {
+      this._renderer.dispose();
+      this._renderer = undefined;
+    }
+    if (this._cameraControls) {
+      this._cameraControls.dispose();
+      this._cameraControls = undefined;
+    }
+    window.removeEventListener("resize", this.resize);
+  }
 }

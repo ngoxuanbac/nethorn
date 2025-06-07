@@ -9,8 +9,9 @@ const createSpeakCharacter = () => {
   let lastTime = 0;
   let prevFetchPromise: Promise<unknown> = Promise.resolve();
   let prevSpeakPromise: Promise<unknown> = Promise.resolve();
+  let isCancelled = false;
 
-  return (
+  const speak = (
     screenplay: Screenplay,
     elevenLabsKey: string,
     elevenLabsParam: ElevenLabsParam,
@@ -18,7 +19,10 @@ const createSpeakCharacter = () => {
     onStart?: () => void,
     onComplete?: () => void
   ) => {
+    if (isCancelled) return;
+
     const fetchPromise = prevFetchPromise.then(async () => {
+      if (isCancelled) return;
       const now = Date.now();
       if (now - lastTime < 1000) {
         await wait(1000 - (now - lastTime));
@@ -42,21 +46,31 @@ const createSpeakCharacter = () => {
     prevFetchPromise = fetchPromise;
     prevSpeakPromise = Promise.all([fetchPromise, prevSpeakPromise]).then(
       ([audioBuffer]) => {
+        if (isCancelled) return;
         onStart?.();
         if (!audioBuffer) {
-          // pass along screenplay to change avatar expression
           return viewer.model?.speak(null, screenplay);
         }
         return viewer.model?.speak(audioBuffer, screenplay);
       }
     );
     prevSpeakPromise.then(() => {
+      if (isCancelled) return;
       onComplete?.();
     });
   };
+
+  const cancel = () => {
+    isCancelled = true;
+    prevFetchPromise = Promise.resolve();
+    prevSpeakPromise = Promise.resolve();
+  };
+
+  return { speak, cancel };
 };
 
-export const speakCharacter = createSpeakCharacter();
+export const { speak: speakCharacter, cancel: cancelSpeakCharacter } =
+  createSpeakCharacter();
 
 export const fetchAudio = async (
   talk: Talk,

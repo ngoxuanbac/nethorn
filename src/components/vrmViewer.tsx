@@ -1,4 +1,4 @@
-import { useContext, useCallback } from "react";
+import { useContext, useCallback, useEffect } from "react";
 import { ViewerContext } from "../features/vrmViewer/viewerContext";
 import { buildUrl } from "@/utils/buildUrl";
 
@@ -43,6 +43,12 @@ export default function VrmViewer() {
     },
     [viewer]
   );
+
+  useEffect(() => {
+    return () => {
+      viewer.dispose();
+    };
+  }, [viewer]);
 
   return <canvas ref={canvasRef} className={"h-full w-full"}></canvas>;
 }
