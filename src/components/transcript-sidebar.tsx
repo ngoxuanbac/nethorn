@@ -19,6 +19,7 @@ import { useAssistant } from "./assistantContext";
 import { Lightbulb, MessageCircle } from "lucide-react";
 import { useLanguage } from "./languageContext";
 import { Button } from "./ui/button";
+import ReactMarkdown from "react-markdown";
 
 export function TranscriptSidebar() {
   const { messages, isTranscriptVisible } = useAssistant();
@@ -93,9 +94,11 @@ export function TranscriptSidebar() {
                             />
                           </div>
                         ) : (
-                          <p className="text-sm text-amber-800 leading-relaxed whitespace-pre-wrap">
-                            {message.content}
-                          </p>
+                          <div className="text-sm text-amber-800 leading-relaxed whitespace-pre-wrap">
+                            <ReactMarkdown>
+                              {message.content.replace(/\[.*?\]/g, "")}
+                            </ReactMarkdown>
+                          </div>
                         )}
                       </Card>
                     </div>

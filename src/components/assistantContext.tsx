@@ -11,6 +11,7 @@ import {
 } from "@/features/constants/koeiroParam";
 import { SYSTEM_PROMPT } from "@/features/constants/systemPromptConstants";
 import { MessageMiddleOut } from "@/features/messages/messageMiddleOut";
+import qaData from "../../public/qa.json";
 import {
   Message,
   Screenplay,
@@ -182,7 +183,11 @@ export function AssistantProvider({
       const processedMessages = messageProcessor.process([
         {
           role: "system",
-          content: SYSTEM_PROMPT,
+          content: `${SYSTEM_PROMPT}. \nBelow is a list of Q&A pairs about these products. 
+            If the user's question is related to any of these questions, please provide the corresponding answer from the list. 
+            If the question is not related, answer normally. Q&A data: ${JSON.stringify(
+              qaData
+            )}`,
         },
         ...messageLog,
       ]);
