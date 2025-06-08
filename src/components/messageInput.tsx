@@ -5,7 +5,7 @@ import type React from "react";
 import { Loader2Icon, Mic, Send } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { useLanguage } from "./language-context";
+import { useLanguage } from "./languageContext";
 
 type Props = {
   userMessage: string;

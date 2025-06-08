@@ -19,8 +19,8 @@ import {
   ChartColumnStacked,
   CircleDollarSign,
 } from "lucide-react";
-import { useAssistant } from "./assistant-context";
-import { useLanguage } from "./language-context";
+import { useAssistant } from "./assistantContext";
+import { useLanguage } from "./languageContext";
 
 export function MobileTranscript() {
   const { messages, isMobileTranscriptOpen, toggleMobileTranscript } =

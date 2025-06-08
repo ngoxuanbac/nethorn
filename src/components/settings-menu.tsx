@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Slider } from "@/components/ui/slider";
 import { Volume2, VolumeX, Settings } from "lucide-react";
-import { useLanguage } from "./language-context";
+import { useLanguage } from "./languageContext";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 

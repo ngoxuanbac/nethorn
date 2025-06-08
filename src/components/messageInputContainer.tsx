@@ -6,8 +6,8 @@ import {
   forwardRef,
   useImperativeHandle,
 } from "react";
-import { useLanguage } from "./language-context";
-import { useAssistant } from "./assistant-context";
+import { useLanguage } from "./languageContext";
+import { useAssistant } from "./assistantContext";
 
 export type VoiceInputHandle = {
   startVoiceChat: () => void;

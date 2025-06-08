@@ -1,6 +1,6 @@
 import Head from "next/head";
 export const Meta = () => {
-  const title = "ChatVRM";
+  const title = "Nethorn";
   const description =
     "You can enjoy conversations with 3D characters using only a web browser using a microphone, text input, and speech synthesis. You can also change the character (VRM), set the personality, and adjust the voice.";
   const imageUrl = "https://chat-vrm-window.vercel.app/ogp-en.png";

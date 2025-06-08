@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { Card } from "@/components/ui/card"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Bot, User, Copy, ThumbsUp, ThumbsDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Bot, User, Copy, ThumbsUp, ThumbsDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface Message {
-  id: string
-  type: "user" | "assistant"
-  content: string
-  timestamp: Date
-  isTyping?: boolean
+  id: string;
+  type: "user" | "assistant";
+  content: string;
+  timestamp: Date;
+  isTyping?: boolean;
 }
 
 interface MessageItemProps {
-  message: Message
+  message: Message;
 }
 
 export function MessageItem({ message }: MessageItemProps) {
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(message.content)
-  }
+    navigator.clipboard.writeText(message.content);
+  };
 
   return (
     <div className="flex gap-3 group">
@@ -32,7 +32,11 @@ export function MessageItem({ message }: MessageItemProps) {
               : "bg-gray-600 text-white"
           }
         >
-          {message.type === "assistant" ? <Bot className="w-4 h-4" /> : <User className="w-4 h-4" />}
+          {message.type === "assistant" ? (
+            <Bot className="w-4 h-4" />
+          ) : (
+            <User className="w-4 h-4" />
+          )}
         </AvatarFallback>
       </Avatar>
 
@@ -53,12 +57,20 @@ export function MessageItem({ message }: MessageItemProps) {
           {message.isTyping ? (
             <div className="flex gap-1">
               <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
-              <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }} />
-              <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }} />
+              <div
+                className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                style={{ animationDelay: "0.1s" }}
+              />
+              <div
+                className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                style={{ animationDelay: "0.2s" }}
+              />
             </div>
           ) : (
             <>
-              <p className="text-sm text-gray-100 leading-relaxed whitespace-pre-wrap pr-8">{message.content}</p>
+              <p className="text-sm text-gray-100 leading-relaxed whitespace-pre-wrap pr-8">
+                {message.content}
+              </p>
 
               {/* Message Actions */}
               <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -96,5 +108,5 @@ export function MessageItem({ message }: MessageItemProps) {
         </Card>
       </div>
     </div>
-  )
+  );
 }

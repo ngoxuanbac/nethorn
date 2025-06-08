@@ -3,9 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Menu, RotateCcw } from "lucide-react";
 import { SettingsMenu } from "./settings-menu";
-import { useAssistant } from "./assistant-context";
-import { useLanguage } from "./language-context";
-import { LanguageSelector } from "./language-selector";
+import { useAssistant } from "./assistantContext";
+import { useLanguage } from "./languageContext";
+import { LanguageSelector } from "./languageSelector";
 import Link from "next/link";
 
 export function Header() {

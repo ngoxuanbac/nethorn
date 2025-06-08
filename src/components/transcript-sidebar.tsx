@@ -15,9 +15,9 @@ import {
   ShoppingCart,
   User,
 } from "lucide-react";
-import { useAssistant } from "./assistant-context";
+import { useAssistant } from "./assistantContext";
 import { Lightbulb, MessageCircle } from "lucide-react";
-import { useLanguage } from "./language-context";
+import { useLanguage } from "./languageContext";
 import { Button } from "./ui/button";
 
 export function TranscriptSidebar() {
