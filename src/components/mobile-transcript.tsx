@@ -108,11 +108,17 @@ export function MobileTranscript() {
                           </div>
                         ) : (
                           <div className="text-sm text-amber-800 leading-relaxed whitespace-pre-wrap">
-                            <ReactMarkdown>
-                              {message.content.replace(
-                                /\[neutral\]|\[happy\]|\[angry\]|\[sad\]|\[relaxed\]/g,
-                                ""
-                              )}
+                            <ReactMarkdown
+                              components={{
+                                a: ({ ...props }) => (
+                                  <a
+                                    {...props}
+                                    className="inline text-blue-600 hover:underline"
+                                  />
+                                ),
+                              }}
+                            >
+                              {message.content}
                             </ReactMarkdown>
                           </div>
                         )}

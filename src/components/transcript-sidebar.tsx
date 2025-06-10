@@ -95,7 +95,18 @@ export function TranscriptSidebar() {
                           </div>
                         ) : (
                           <div className="text-sm text-amber-800 leading-relaxed whitespace-pre-wrap">
-                            <ReactMarkdown>{message.content}</ReactMarkdown>
+                            <ReactMarkdown
+                              components={{
+                                a: ({ ...props }) => (
+                                  <a
+                                    {...props}
+                                    className="inline text-blue-600 hover:underline"
+                                  />
+                                ),
+                              }}
+                            >
+                              {message.content}
+                            </ReactMarkdown>
                           </div>
                         )}
                       </Card>

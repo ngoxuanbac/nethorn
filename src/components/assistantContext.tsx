@@ -250,9 +250,10 @@ export function AssistantProvider({
 
             const aiText = `${tag} ${sentence}`;
             const aiTalks = textsToScreenplay([aiText], koeiroParam);
-            aiTextLog += aiText;
+            aiTextLog += sentence;
 
             const currentAssistantMessage = sentences.join(" ");
+            console.log(currentAssistantMessage);
             handleSpeakAi(aiTalks[0], elevenLabsParam, () => {
               setAssistantMessage(currentAssistantMessage);
             });
