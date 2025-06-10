@@ -184,7 +184,7 @@ export function AssistantProvider({
         {
           role: "system",
           content: `${SYSTEM_PROMPT}. \nBelow is a list of Q&A pairs about these products. 
-            If the user's question is related to any of these questions, please provide the corresponding answer from the list. 
+            If the user's question is related to any of these, please provide the exact corresponding answer from the list.
             If the question is not related, answer normally. Q&A data: ${JSON.stringify(
               qaData
             )}`,

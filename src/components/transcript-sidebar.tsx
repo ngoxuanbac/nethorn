@@ -95,9 +95,7 @@ export function TranscriptSidebar() {
                           </div>
                         ) : (
                           <div className="text-sm text-amber-800 leading-relaxed whitespace-pre-wrap">
-                            <ReactMarkdown>
-                              {message.content.replace(/\[.*?\]/g, "")}
-                            </ReactMarkdown>
+                            <ReactMarkdown>{message.content}</ReactMarkdown>
                           </div>
                         )}
                       </Card>
