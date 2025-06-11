@@ -22,7 +22,7 @@ export async function getChatResponseStream(
               model: "google/gemini-2.0-flash-001",
               messages: messages,
               temperature: 0.7,
-              max_tokens: 500,
+              max_tokens: 1000,
               stream: true,
             }),
           }

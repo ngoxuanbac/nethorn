@@ -23,7 +23,7 @@ export function LanguageSelector() {
         <Button
           variant="ghost"
           size="sm"
-          className="text-amber-800 hover:text-amber-600 hover:bg-amber-50 gap-2"
+          className="text-blue-800 hover:text-blue-600 hover:bg-blue-50 gap-2"
         >
           <Globe className="w-4 h-4" />
           <span className="hidden sm:inline">{currentLanguage?.flag}</span>
@@ -32,13 +32,13 @@ export function LanguageSelector() {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="w-48 bg-white text-amber-900 border-amber-200"
+        className="w-48 bg-white text-blue-900 border-blue-200"
       >
         {availableLanguages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
-            className="flex items-center justify-between cursor-pointer hover:!text-amber-600"
+            className="flex items-center justify-between cursor-pointer hover:!text-blue-600"
           >
             <div className="flex items-center gap-2">
               <span>{lang.flag}</span>

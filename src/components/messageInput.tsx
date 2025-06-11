@@ -34,16 +34,16 @@ export const MessageInput = ({
 
   return (
     <div className="absolute bottom-0 w-full z-20">
-      <div className="text-amber-900">
+      <div className="text-blue-900">
         <div className="mx-auto max-w-4xl p-2">
-          <div className="flex items-center gap-2 p-2  bg-amber-50 rounded-full border border-amber-300">
+          <div className="flex items-center gap-2 p-2  bg-blue-50 rounded-full border border-blue-300">
             <Button
               size="icon"
               className={cn(
                 "rounded-full border-0 h-10 w-10 transition-colors duration-300",
                 isMicRecording
                   ? "bg-red-600 hover:bg-red-700 text-white"
-                  : "bg-amber-100 hover:bg-amber-200 text-amber-800"
+                  : "bg-blue-100 hover:bg-blue-200 text-blue-800"
               )}
               disabled={isChatProcessing}
               onClick={onClickMicButton}
@@ -57,13 +57,13 @@ export const MessageInput = ({
               onChange={onChangeUserMessage}
               onKeyDown={onKeyDownUserMessage}
               disabled={isChatProcessing}
-              className="flex-1 bg-transparent border-0 text-amber-900 placeholder:text-amber-500 focus:outline-none text-base px-3 disabled:text-amber-400 disabled:cursor-not-allowed"
+              className="flex-1 bg-transparent border-0 text-blue-900 placeholder:text-blue-500 focus:outline-none text-base px-3 disabled:text-blue-400 disabled:cursor-not-allowed"
               value={userMessage}
             />
 
             <Button
               size="icon"
-              className="rounded-full bg-amber-100 hover:bg-amber-200 text-amber-800 border-0 h-10 w-10 disabled:bg-amber-100/50 disabled:text-amber-400"
+              className="rounded-full bg-blue-100 hover:bg-blue-200 text-blue-800 border-0 h-10 w-10 disabled:bg-blue-100/50 disabled:text-blue-400"
               disabled={isChatProcessing || !userMessage}
               onClick={onClickSendButton}
             >

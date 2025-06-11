@@ -18,9 +18,9 @@ export function Header() {
   const { t } = useLanguage();
 
   return (
-    <div className="flex justify-between items-center p-3 md:p-4 border-b border-amber-200 bg-white/95 backdrop-blur-sm">
+    <div className="flex justify-between items-center p-3 md:p-4 border-b border-blue-200 bg-white/95 backdrop-blur-sm">
       <div className="flex items-center gap-2 md:gap-3">
-        <h1 className="text-base md:text-lg font-bold text-amber-900">
+        <h1 className="text-base md:text-lg font-bold text-blue-900">
           <Link href="/">NETHORN</Link>
         </h1>
 
@@ -28,7 +28,7 @@ export function Header() {
           variant="ghost"
           size="sm"
           onClick={toggleTranscript}
-          className="hidden lg:flex text-amber-800 hover:text-amber-600 hover:bg-amber-50"
+          className="hidden lg:flex text-blue-800 hover:text-blue-600 hover:bg-blue-50"
         >
           <MessageSquare fill="currentColor" className="w-4 h-4 mr-2" />
           {isTranscriptVisible ? t.hideTranscript : t.showTranscript}{" "}
@@ -39,7 +39,7 @@ export function Header() {
           variant="ghost"
           size="sm"
           onClick={toggleMobileTranscript}
-          className="lg:hidden text-amber-800 hover:text-amber-600 hover:bg-amber-50"
+          className="lg:hidden text-blue-800 hover:text-blue-600 hover:bg-blue-50"
         >
           <Menu className="w-4 h-4" />
         </Button>
@@ -51,7 +51,7 @@ export function Header() {
           variant="ghost"
           size="sm"
           onClick={clearMessages}
-          className="text-amber-800 hover:text-amber-600"
+          className="text-blue-800 hover:text-blue-600"
         >
           <RotateCcw className="w-4 h-4" />
         </Button>

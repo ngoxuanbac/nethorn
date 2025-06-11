@@ -19,7 +19,7 @@ export default function HomePage() {
       <AssistantProvider
         startVoiceChat={() => voiceRef.current?.startVoiceChat()}
       >
-        <div className="h-screen bg-gradient-to-b from-amber-50 to-white text-amber-900 flex flex-col overflow-hidden">
+        <div className="h-screen bg-gradient-to-b from-blue-50 to-white text-blue-900 flex flex-col overflow-hidden">
           <Header />
 
           <div className="flex-1 flex overflow-hidden">
