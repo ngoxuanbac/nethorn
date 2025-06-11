@@ -54,7 +54,7 @@ export default function VrmViewer(props: { url: string }) {
     <div className="relative h-full w-full">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center z-10">
-          <Loader2Icon className="animate-spin text-amber-900 text-lg font-semibold " />
+          <Loader2Icon className="animate-spin text-blue-900 text-lg font-semibold " />
         </div>
       )}
       <canvas ref={canvasRef} className={"h-full w-full"}></canvas>
